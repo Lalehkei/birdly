@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birdly</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="logo">🐦 Birdly</div>
+            <ul class="nav-links">
+                <li><a href="#" data-view="home-view">Home</a></li>
+                <li><a href="#" data-view="explore-view">Explore</a></li>
+                <li><a href="#" data-view="report-view">Report</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-view" class="view">
+            <div class="hero">
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content">
+                    <p class="hero-tagline">Birdwatching made simple</p>
+                    <h1>Discover Birds Around You</h1>
+                    <p class="hero-text">
+                        Explore bird species, check recent sightings, and report your own observations with Birdly.
+                    </p>
+                    <button id="explore-btn" type="button">Explore Birds</button>
+                </div>
+            </div>
+
+            <section class="home-section">
+                <h2>Recent Sightings</h2>
+                <p>Live bird observations from the API will appear here.</p>
+            </section>
+
+            <section class="home-section">
+                <h2>Featured Birds</h2>
+                <p>Featured bird cards will appear here.</p>
+            </section>
+        </section>
+
+        <section id="explore-view" class="view hidden">
+            <h2>Explore Birds</h2>
+            <p>Browse bird species and search the gallery.</p>
+        </section>
+
+        <section id="report-view" class="view hidden">
+            <h2>Report a Sighting</h2>
+            <p>Submit your latest bird observation.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Birdly</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
