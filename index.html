@@ -42,13 +42,23 @@
 
             <section class="home-section">
                 <h2>Featured Birds</h2>
-                <p>Featured bird cards will appear here.</p>
+                <p>Discover a few popular birds commonly seen by birdwatchers.</p>
+                <section id="featured-birds" class="featured-birds"></section>
             </section>
         </section>
 
         <section id="explore-view" class="view hidden">
-            <h2>Explore Birds</h2>
-            <p>Browse bird species and search the gallery.</p>
+            <header class="section-header">
+                <h2>Explore Birds</h2>
+                <p>Browse bird species and discover their habitats.</p>
+            </header>
+
+            <section class="gallery-controls">
+                <input type="text" id="search-input" placeholder="Search birds by name or category"
+                    aria-label="Search birds" />
+            </section>
+
+            <section id="bird-gallery" class="bird-gallery"></section>
         </section>
 
         <section id="report-view" class="view hidden">
@@ -61,6 +71,8 @@
         <p>&copy; 2026 Birdly</p>
     </footer>
 
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
 </body>
 
