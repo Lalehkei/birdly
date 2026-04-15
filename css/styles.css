@@ -112,29 +112,11 @@ button:hover {
   background-color: var(--color-accent-dark);
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .hero {
-        min-height: 55vh;
-        padding: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-
-    .hero-text {
-        font-size: 1rem;
-    }
+.bird-gallery,
+.featured-birds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
 }
 
 @media (max-width: 992px) {
@@ -144,13 +126,59 @@ button:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .view {
+    padding: 1.25rem;
+  }
+
+  .hero {
+    min-height: 55vh;
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  #search-input {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   .bird-gallery,
   .featured-birds {
     grid-template-columns: 1fr;
   }
-}
 
+  .bird-card-image,
+  .featured-card-image {
+    height: 200px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
 .hero {
   position: relative;
   min-height: 70vh;
@@ -226,12 +254,7 @@ button:hover {
   border-color: var(--color-accent);
 }
 
-.bird-gallery,
-.featured-birds {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
-}
+
 
 .bird-card,
 .featured-card {
