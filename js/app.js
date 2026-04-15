@@ -28,3 +28,6 @@ if (exploreButton) {
     showView("explore-view");
   });
 }
+
+renderBirdGallery(birds);
+renderFeaturedBirds(birds.slice(0, 3));
