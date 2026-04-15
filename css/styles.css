@@ -243,15 +243,22 @@ button:hover {
 #search-input {
   width: 100%;
   max-width: 420px;
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1.2rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   font-size: 1rem;
   outline: none;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
 }
 
 #search-input:focus {
   border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(47, 133, 90, 0.15);
+}
+
+#search-input::placeholder {
+  color: #9ca3af;
 }
 
 
@@ -307,5 +314,15 @@ button:hover {
 .bird-region {
   margin: 0 0 0.75rem;
   font-size: 0.95rem;
+  color: #5f6b66;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   color: #5f6b66;
 }
