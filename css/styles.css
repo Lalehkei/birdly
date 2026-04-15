@@ -142,8 +142,9 @@ button:hover {
     padding: 1.5rem 1rem;
   }
 
-  .view {
-    padding: 1.25rem;
+  .view,
+  .home-section {
+    padding: 1rem;
   }
 
   .hero {
@@ -162,6 +163,16 @@ button:hover {
   #search-input {
     max-width: 100%;
   }
+
+  .sighting-form {
+    padding: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -175,40 +186,52 @@ button:hover {
     height: 200px;
   }
 
-  button {
+  button,
+  .sighting-form button {
     width: 100%;
   }
-}
 
-@media (max-width: 640px) {
-  .sighting-header {
+  .sighting-header,
+  .submitted-header {
     display: none;
   }
 
-  .sighting-row {
+  .sighting-row,
+  .submitted-row {
     grid-template-columns: 1fr;
     gap: 0.4rem;
+    padding: 0.85rem;
   }
 
-  .sighting-row p::before {
+  .sighting-row p::before,
+  .submitted-row p::before {
     font-weight: 700;
     color: var(--color-accent-dark);
     display: inline-block;
     min-width: 75px;
   }
 
-  .sighting-bird::before {
+  .sighting-bird::before,
+  .submitted-bird::before {
     content: "Bird: ";
   }
 
-  .sighting-location::before {
+  .sighting-location::before,
+  .submitted-location::before {
     content: "Location: ";
   }
 
-  .sighting-date::before {
+  .sighting-date::before,
+  .submitted-date::before {
     content: "Date: ";
   }
+
+  .submitted-table,
+  .sightings-table {
+    gap: 0.5rem;
+  }
 }
+
 .hero {
   position: relative;
   min-height: 70vh;
@@ -357,27 +380,6 @@ button:hover {
   color: #5f6b66;
 }
 
-.sightings-list {
-  display: grid;
-  gap: 1rem;
-}
-
-.sighting-item {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-}
-
-.sighting-item h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.sighting-item p {
-  margin: 0.3rem 0;
-}
 
 .sightings-table {
   display: flex;
@@ -385,7 +387,6 @@ button:hover {
   gap: 0.75rem;
 }
 
-/* Header */
 .sighting-header {
   display: grid;
   grid-template-columns: 1.2fr 1.5fr 1fr;
@@ -428,5 +429,100 @@ button:hover {
 }
 
 .sighting-bird {
+  font-weight: 600;
+}
+
+.sighting-form {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: #f7faf9;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.form-group label {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: #fdfefe;
+  box-shadow: 0 0 0 3px rgba(47, 133, 90, 0.15);
+}
+
+.error-message {
+  margin: 0; 
+  font-size: 0.8rem;
+  min-height: 1rem;
+  color: #c53030;
+}
+
+.submitted-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.submitted-header,
+.submitted-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+}
+
+.submitted-header {
+  background-color: #dff3e8;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.submitted-row {
+  background-color: #f7faf9;
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.submitted-row:hover {
+  background-color: #edf7f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.submitted-row:nth-child(even) {
+  background-color: #f1f5f3;
+}
+
+.submitted-row p,
+.submitted-header p {
+  margin: 0;
+}
+
+.submitted-bird {
   font-weight: 600;
 }
