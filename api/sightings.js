@@ -1,4 +1,4 @@
-export async function GET(request) {
+export default async function handler(req, res) {
   try {
     const response = await fetch(
       "https://api.ebird.org/v2/data/obs/CA-ON/recent?maxResults=6",
@@ -14,15 +14,11 @@ export async function GET(request) {
     }
 
     const data = await response.json();
-
-    return Response.json(data, { status: 200 });
+    res.status(200).json(data);
   } catch (error) {
-    return Response.json(
-      {
-        error: "Unable to load sightings at the moment.",
-        details: error.message,
-      },
-      { status: 500 }
-    );
+    res.status(500).json({
+      error: "Unable to load sightings at the moment.",
+      details: error.message,
+    });
   }
 }

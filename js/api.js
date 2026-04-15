@@ -1,5 +1,26 @@
 const sightingsContainer = document.querySelector("#recent-sightings");
 
+// function renderSightings(sightings) {
+//   if (!sightingsContainer) return;
+
+//   if (!sightings.length) {
+//     sightingsContainer.innerHTML = `
+//       <p class="no-results">No recent sightings available right now.</p>
+//     `;
+//     return;
+//   }
+
+//   const items = sightings.map((sighting) => `
+//     <article class="sighting-item">
+//       <h3>${sighting.comName}</h3>
+//       <p><strong>Location:</strong> ${sighting.locName}</p>
+//       <p><strong>Date:</strong> ${sighting.obsDt}</p>
+//     </article>
+//   `);
+
+//   sightingsContainer.innerHTML = items.join("");
+// }
+
 function renderSightings(sightings) {
   if (!sightingsContainer) return;
 
@@ -10,17 +31,26 @@ function renderSightings(sightings) {
     return;
   }
 
-  const items = sightings.map((sighting) => {
+  const rows = sightings.map((sighting) => {
     return `
-      <article class="sighting-item">
-        <h3>${sighting.comName}</h3>
-        <p><strong>Location:</strong> ${sighting.locName}</p>
-        <p><strong>Date:</strong> ${sighting.obsDt}</p>
+      <article class="sighting-row">
+        <p class="sighting-bird">${sighting.comName}</p>
+        <p class="sighting-location">${sighting.locName}</p>
+        <p class="sighting-date">${sighting.obsDt}</p>
       </article>
     `;
   });
 
-  sightingsContainer.innerHTML = items.join("");
+  sightingsContainer.innerHTML = `
+    <div class="sightings-table">
+      <div class="sighting-header">
+        <p>Bird</p>
+        <p>Location</p>
+        <p>Date</p>
+      </div>
+      ${rows.join("")}
+    </div>
+  `;
 }
 
 async function loadRecentSightings() {
@@ -30,7 +60,6 @@ async function loadRecentSightings() {
 
   try {
     const response = await fetch("/api/sightings");
-
     if (!response.ok) {
       throw new Error("Failed to fetch sightings");
     }

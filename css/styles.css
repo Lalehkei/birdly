@@ -179,6 +179,36 @@ button:hover {
     width: 100%;
   }
 }
+
+@media (max-width: 640px) {
+  .sighting-header {
+    display: none;
+  }
+
+  .sighting-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .sighting-row p::before {
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    display: inline-block;
+    min-width: 75px;
+  }
+
+  .sighting-bird::before {
+    content: "Bird: ";
+  }
+
+  .sighting-location::before {
+    content: "Location: ";
+  }
+
+  .sighting-date::before {
+    content: "Date: ";
+  }
+}
 .hero {
   position: relative;
   min-height: 70vh;
@@ -347,4 +377,40 @@ button:hover {
 
 .sighting-item p {
   margin: 0.3rem 0;
+}
+
+.sightings-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sighting-header,
+.sighting-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+}
+
+.sighting-header {
+  background-color: #e6f4ea;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.sighting-row {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.sighting-row p,
+.sighting-header p {
+  margin: 0;
+}
+
+.sighting-bird {
+  font-weight: 600;
 }
