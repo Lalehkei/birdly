@@ -1,6 +1,7 @@
 const views = document.querySelectorAll(".view");
 const navLinks = document.querySelectorAll("[data-view]");
 const exploreButton = document.querySelector("#explore-btn");
+const searchInput = document.querySelector("#search-input");
 
 function showView(viewId) {
   views.forEach((view) => {
@@ -11,6 +12,19 @@ function showView(viewId) {
   if (activeView) {
     activeView.classList.remove("hidden");
   }
+}
+
+function filterBirds(searchTerm) {
+  const normalizedTerm = searchTerm.trim().toLowerCase();
+
+  const filteredBirds = birds.filter((bird) => {
+    return (
+      bird.name.toLowerCase().includes(normalizedTerm) ||
+      bird.category.toLowerCase().includes(normalizedTerm)
+    );
+  });
+
+  renderBirdGallery(filteredBirds);
 }
 
 navLinks.forEach((link) => {
@@ -26,6 +40,12 @@ navLinks.forEach((link) => {
 if (exploreButton) {
   exploreButton.addEventListener("click", () => {
     showView("explore-view");
+  });
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", (event) => {
+    filterBirds(event.target.value);
   });
 }
 

@@ -24,6 +24,13 @@ function createBirdCardMarkup(bird, isFeatured = false) {
 function renderBirdGallery(birdList) {
   if (!birdGallery) return;
 
+  if (birdList.length === 0) {
+    birdGallery.innerHTML = `
+      <p class="no-results">No birds found. Try another search term.</p>
+    `;
+    return;
+  }
+
   const cards = birdList.map((bird) => createBirdCardMarkup(bird));
   birdGallery.innerHTML = cards.join("");
 }
