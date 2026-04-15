@@ -1,68 +1,84 @@
-# Birdly
+# 🐦 Birdly
 
-Discover birds around you through an interactive portal featuring bird species, real-time sightings, and user-reported observations.
-
----
-
-## Project Pitch
-
-Birdly is a dynamic web application designed for bird enthusiasts to explore bird species and discover recent sightings in their area. The platform combines a curated gallery of birds with real-time data from an external API, along with a feature that allows users to report their own sightings. Birdly provides a simple and engaging way to interact with birding data in one place.
+Birdly is a birdwatching web application that allows users to explore bird species, view recent sightings, and report their own observations.
 
 ---
 
-## User Persona
-
-**Name:** Sarah  
-**Age:** 32  
-**Background:** Nature enthusiast and beginner bird watcher  
-
-**Goals:**
-- Discover birds in her area  
-- Learn about different species  
-- View recent bird sightings  
-
-**Frustrations:**
-- Information is scattered across different platforms  
-- Hard to find real-time bird activity  
-- No simple tool to explore bird data  
+## 🚀 Live Demo
+https://birdly.vercel.app/
 
 ---
 
-## Problem Statement
+## 📌 Features
 
-Bird watchers, especially beginners, struggle to find a centralized and easy-to-use platform to explore bird species and view recent sightings in their area.
-
----
-
-## Solution
-
-Birdly provides:
-- A searchable gallery of bird species  
-- Real-time bird sightings using an external API  
-- A simple interface for users to report bird sightings  
+- 🔍 Search and explore bird species by name and category
+- 🖼️ Responsive bird gallery with dynamic card rendering
+- 🐦 Featured birds section on homepage
+- 📡 Live recent sightings powered by eBird API
+- 📝 Report bird sightings (stored in localStorage)
+- ⚡ Single Page Application (SPA) navigation
+- 📱 Fully responsive design for mobile, tablet, and desktop
 
 ---
 
-## Features
+## 🛠️ Technologies Used
 
-- Dynamic bird gallery using a local JavaScript array  
-- Real-time search and filtering  
-- Live widget showing recent bird sightings (API)  
-- Report sighting form with custom validation  
-- Local storage to save user-submitted sightings  
-- Responsive design for mobile and desktop  
-
----
-
-## Tech Stack
-
-- HTML5  
-- CSS3  
-- JavaScript (ES6)  
-- Fetch API  
-- LocalStorage  
-- Vercel (for deployment and API handling)  
+- HTML5 (semantic structure)
+- CSS3 (Flexbox, Grid, responsive design)
+- JavaScript (ES6+)
+- Vercel (deployment & serverless functions)
+- eBird API (live bird data)
 
 ---
 
+## 🧠 How It Works
 
+- Bird data is stored locally in a JavaScript array and rendered dynamically.
+- The Explore page uses real-time filtering based on user input.
+- Recent sightings are fetched from the eBird API using a secure Vercel serverless function.
+- The API key is stored securely using environment variables.
+- Navigation between sections is handled using SPA techniques (show/hide views).
+
+---
+
+## ⚙️ Project Structure
+---
+
+## ⚠️ Challenges & Solutions
+
+### 1. Secure API Key Handling
+**Challenge:** Avoid exposing API key in frontend  
+**Solution:** Used Vercel serverless function and environment variables
+
+---
+
+### 2. Dynamic Rendering Performance
+**Challenge:** Efficiently render multiple bird cards  
+**Solution:** Used `map()` and `innerHTML` update once instead of multiple DOM updates
+
+---
+
+### 3. Responsive Layout
+**Challenge:** Ensure usability across devices  
+**Solution:** Implemented CSS Grid and media queries for adaptive layout
+
+---
+
+### 4. Real-time Search Filtering
+**Challenge:** Provide instant feedback while typing  
+**Solution:** Used input event listener and dynamic filtering
+
+---
+
+## 📚 Future Improvements
+
+- Add bird images from external APIs
+- Add map integration for sightings
+- Save user-reported sightings to backend
+- Improve filtering with multiple criteria
+
+---
+
+## 👩‍💻 Author
+
+Laleh Keivani
