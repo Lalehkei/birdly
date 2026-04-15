@@ -326,3 +326,25 @@ button:hover {
   border-radius: var(--radius);
   color: #5f6b66;
 }
+
+.sightings-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.sighting-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sighting-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.sighting-item p {
+  margin: 0.3rem 0;
+}

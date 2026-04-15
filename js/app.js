@@ -51,3 +51,4 @@ if (searchInput) {
 
 renderBirdGallery(birds);
 renderFeaturedBirds(birds.slice(0, 3));
+loadRecentSightings();
