@@ -2,6 +2,7 @@ const views = document.querySelectorAll(".view");
 const navLinks = document.querySelectorAll("[data-view]");
 const exploreButton = document.querySelector("#explore-btn");
 const searchInput = document.querySelector("#search-input");
+const featuredExploreButton = document.querySelector("#featured-explore-btn");
 
 function showView(viewId) {
   views.forEach((view) => {
@@ -12,6 +13,11 @@ function showView(viewId) {
   if (activeView) {
     activeView.classList.remove("hidden");
   }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function filterBirds(searchTerm) {
@@ -46,6 +52,12 @@ if (exploreButton) {
 if (searchInput) {
   searchInput.addEventListener("input", (event) => {
     filterBirds(event.target.value);
+  });
+}
+
+if (featuredExploreButton) {
+  featuredExploreButton.addEventListener("click", () => {
+    showView("explore-view");
   });
 }
 

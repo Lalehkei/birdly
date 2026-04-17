@@ -526,3 +526,9 @@ button:hover {
 .submitted-bird {
   font-weight: 600;
 }
+
+.featured-action {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
